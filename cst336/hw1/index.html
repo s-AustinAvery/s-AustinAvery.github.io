@@ -1,58 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
 
-    <head>
-        <meta charset="UTF-8">
-        <title> Austin Shatswell: Portfolio</title>
-        <link href="css/styles.css" rel="stylesheet">
-        <style>
-            /*
-            body {
-                background-color: #000066 !important;
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algorithms Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Algorithms</h1>
+    <p class="tagline">What are they? Why do we care?</p>
+  </header>
 
-            }
-            */
-        </style>
-    </head>
+  <nav class="top-nav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Overview</a>
+    <a href="complexity.html">Complexity</a>
+    <a href="types.html">Types</a>
+    <a href="design.html">Design Techniques</a>
+  </nav>
 
-    <body>
-        <header>
-            <h1> Austin Shatswell </h1>
-        </header>
-        <hr>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        
-        <br><br>
+  <main>
+    <section class="hero card">
+      <img src="img/IndexImage.png" alt="visualization of an algorithm" class="hero-img">
+      <div>
+        <h2>What is an Algorithm?</h2>
+        <p>
+          An algorithm is a step by step set of instructions designed to solve a problem. They are used everywhere in computer science,
+          powering anything from search engines to GPS navigation apps.
+        </p>
+        <p class="source-note">
+          Sources:
+          <a href="https://en.wikipedia.org/wiki/Algorithm" target="_blank" rel="noopener">Wikipedia</a>,
+          <a href="https://www.geeksforgeeks.org/dsa/introduction-to-algorithms/" target="_blank" rel="noopener">geeksforgeeks</a>.
+        </p>
+      </div>
+    </section>
 
-        <main>
-            <figure>
-                <img src="=img/Austin_Shatswell.png" alt="Picture of Austin Shatswell">
-            </figure>
+    <section class="grid-3">
+      <article class="card">
+        <h3>Complexity</h3>
+        <p>Big O notation and why efficiency matters.</p>
+        <a class="button" href="complexity.html">Learn more</a>
+      </article>
 
-            <div>
-                Hello! <br />
-                <p>This is my professional portfolio website. Thank you for taking the time to visit.</p>
+      <article class="card">
+        <h3>Types</h3>
+        <p>Sorting, searching, graphs, and more.</p>
+        <a class="button" href="types.html">Learn more</a>
+      </article>
 
-                <p>I am an aspiring Software Developer enrolled at CSUMB.</p>
+      <article class="card">
+        <h3>Design Techniques</h3>
+        <p>Brute force, divide and conquer, greedy, recursion.</p>
+        <a class="button" href="design.html">Learn more</a>
+      </article>
+    </section>
+  </main>
 
-                <p>If you would like to take a look at some of my projects or contact me, feel free to follow the links provided!</p>
-
-                <em> Success through perseverance. </em>
-                <br>
-
-            </div>
-        </main>
-        
-        <footer>
-              <hr>
-              CST336 Internet Programming. 2025&copy; Shatswell <br>
-
-        </footer>
-        
-    </body>
-
+  <footer class="site-footer">
+    <p>&copy; CST336 - 2025&copy; Shatswell</p>
+  </footer>
+</body>
 </html>
