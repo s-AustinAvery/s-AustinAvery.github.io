@@ -150,9 +150,4 @@ blockquote {
   height: auto;
   display: block;
   margin: 0.5rem auto 1rem;
-  transition: transform 200ms ease;
-}
-
-.csumb-logo:hover {
-  transform: scale(1.1);
 }
