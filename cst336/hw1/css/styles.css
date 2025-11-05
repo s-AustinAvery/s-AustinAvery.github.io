@@ -144,3 +144,15 @@ blockquote {
   padding: 2rem 1rem 2rem;
   border-top: 1px solid rgba(229,231,235,0.08);
 }
+
+.csumb-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0.5rem auto 1rem;
+  transition: transform 200ms ease;
+}
+
+.csumb-logo:hover {
+  transform: scale(1.1);
+}
