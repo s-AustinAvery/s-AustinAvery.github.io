@@ -96,20 +96,26 @@ function checkGuess() {
             gameOver();
         } else if (guess > randomNumber) {
             feedback.textContent = "Guess was too high";
-            attemptsDisplay.textContent = "You have " + (7-attempts) + " attempt(s) left."
+            guessAgain();
         }
         else {
             feedback.textContent = "Guess was too low";
-            attemptsDisplay.textContent = "You have " + (7-attempts) + " attempt(s) left."
+            guessAgain();
         }
     }
+}
 
-    function gameOver() {
-        let guessBtn = document.querySelector("#guessBtn");
-        let resetBtn = document.querySelector("#resetBtn");
-        guessBtn.style.display = "none";
-        resetBtn.style.display = "inline";
-    }
+function guessAgain() {
+    attemptsDisplay.textContent = "You have " + (7-attempts) + " attempt(s) left."
+    document.querySelector("#playerGuess").value = "";
+    playerGuess.focus();
+}
+
+function gameOver() {
+    let guessBtn = document.querySelector("#guessBtn");
+    let resetBtn = document.querySelector("#resetBtn");
+    guessBtn.style.display = "none";
+    resetBtn.style.display = "inline";
 }
 
 function setFace(state){
