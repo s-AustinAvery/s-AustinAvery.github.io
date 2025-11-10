@@ -106,7 +106,7 @@ function checkGuess() {
 }
 
 function guessAgain() {
-    attemptsDisplay.textContent = "You have " + (7-attempts) + " attempt(s) left."
+    attemptsDisplay.textContent = "You have " + (7-attempts) + " attempt(s) left"
     document.querySelector("#playerGuess").value = "";
     playerGuess.focus();
 }
