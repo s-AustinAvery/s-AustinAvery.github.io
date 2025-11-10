@@ -1,0 +1,191 @@
+:root{
+  --bg:#020402;
+  --panel:#031107;
+  --text:#c6ffb0;
+  --muted:#8aff7a;
+  --accent:#4fff3c;
+  --success:#76ff62;
+  --danger:#ff4444;
+  --radius:10px;
+  --shadow:0 0 20px rgba(79,255,60,.25);
+}
+
+*{ box-sizing:border-box; }
+html,body{ 
+    height:100%; 
+}
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, "Noto Sans";
+  color:var(--text);
+  background: var(--bg);
+  display:flex; flex-direction:column; align-items:center;
+  gap:24px; padding:28px 16px 40px;
+}
+
+/* header */
+.site-header{ 
+    text-align:center; max-width:900px; 
+}
+
+.title{
+  font-family:"Silkscreen", system-ui;
+  font-size:clamp(22px,4vw,36px);
+  margin:0 0 6px;
+}
+.subtitle{ margin:0; color:var(--muted); font-size:14px; }
+
+/* card */
+.card{
+  width:min(1000px,94vw);
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:22px clamp(16px,4vw,28px);
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* score */
+.score-row{ 
+  display:flex; justify-content:flex-end; margin-bottom:12px; 
+}
+.score-pill{
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px;
+}
+
+/* layout with inputs on left and face on right */
+.play-row{
+  display:grid; grid-template-columns:1fr minmax(240px,280px);
+  gap:20px; align-items:start;
+}
+@media (max-width:760px){ 
+    .play-row{ 
+        grid-template-columns:1fr; 
+    } 
+    .right-col{ 
+        order:-1; 
+    } 
+}
+
+/* inputs and buttons */
+.label{ 
+    display:block; color:var(--muted); margin-bottom:8px; font-size:14px; 
+}
+.control{ 
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap; 
+}
+/* inputs and buttons */
+.input{
+  background: color-mix(in srgb, var(--panel) 85%, var(--bg) 15%);
+  color: var(--text);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:10px; padding:10px 12px; width:140px; font-size:16px;
+}
+.input:focus{ outline:none; border-color:var(--accent); }
+
+.btn{
+  border:none; border-radius:10px; padding:10px 14px; font-weight:700; cursor:pointer;
+}
+.btn-primary{ 
+  background: var(--accent); 
+  color: var(--bg);
+}
+.btn-secondary{ 
+  background: color-mix(in srgb, var(--panel) 70%, var(--accent) 30%);
+  color: var(--text);
+}
+
+/* feedback */
+.feedback{ 
+    min-height:22px; margin:10px 0 6px; font-weight:700; 
+}
+.feedback.win{ 
+    color:var(--success); 
+}
+.feedback.lose{ 
+    color:var(--danger); 
+}
+
+/* attempts and guesses line */
+.attempts-simple, .guesses-line{ 
+    color:var(--muted); font-size:14px; 
+}
+.guesses-title{ 
+    margin-right:6px; 
+}
+
+/* right column */
+.right-col{ 
+    display:flex; flex-direction:column; gap:12px; 
+}
+/* number reveal */
+.reveal-box{
+  min-height:40px; display:flex; align-items:center; justify-content:center;
+  padding:8px 10px; border-radius:10px;
+  border:1px solid rgba(255,255,255,.2);
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  font-weight:700; text-align:center;
+}
+
+/* face */
+.face-wrap{
+  display:flex; justify-content:center; align-items:center; height:120px;
+  border-radius:12px; background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+.face-wrap img{ 
+    width:90px; height:90px; object-fit:contain; 
+}
+
+.face-wrap img.thinking{ 
+    animation:face-bob 1.4s ease-in-out infinite; 
+}
+
+@keyframes face-bob{ 
+    0%,100%{ 
+        transform:translateY(0); 
+    } 
+    50%{ 
+        transform:translateY(-4px); 
+    } 
+}
+
+/* confetti stuff */
+#confettiLayer{
+  pointer-events:none; position:fixed; inset:0; overflow:hidden; z-index:10;
+}
+
+/* the wrapper that falls */
+.confetti{
+  position:absolute; top:-24px; /* start above window */
+  animation: confetti-fall linear forwards;
+}
+
+/* the confetti child that spins and has color */
+.confetti-shape{
+  display:block;
+  width:12px; height:12px;
+  background: currentColor;
+  opacity:.95;
+  animation: confetti-spin linear infinite;
+  will-change: transform, opacity;
+}
+
+/* falling animation */
+@keyframes confetti-fall{
+  to { transform: translateY(110vh); }
+}
+
+/* spinning animation */
+@keyframes confetti-spin{
+  to { transform: rotate(360deg); }
+}
+
+/* footer */
+.site-footer{ 
+    color:var(--muted); font-size:13px; text-align:center; opacity:.9; 
+}

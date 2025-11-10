@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guess a Number</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- confetti layer here -->
+    <div id="confettiLayer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <h1 class="title">Guess the Number!</h1>
+      <p class="subtitle">Pick a number from <strong>1–99</strong>. You’ve got <strong>7 tries</strong>.</p>
+    </header>
+
+    <main id="main" class="card">
+      <section class="score-row">
+        <div id="winLossDisplay" class="score-pill">Wins: 0 | Losses: 0</div>
+      </section>
+
+      <section class="play-row">
+        <div class="left-col">
+          <label for="playerGuess" class="label">Enter a guess</label>
+          <div class="control">
+            <input type="text" inputmode="numeric" pattern="[0-9]*" id="playerGuess" size="5" class="input">
+            <button id="guessBtn" class="btn btn-primary">Guess</button>
+            <button id="resetBtn" class="btn btn-secondary" style="display:none;">Reset</button>
+          </div>
+
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+
+          <div class="attempts-simple">
+            <span id="attemptsDisplay" class="attempts-remaining">You have 7 attempts.</span>
+          </div>
+
+          <div class="guesses-line">
+            <span class="guesses-title">Previous Guesses:</span>
+            <span id="guesses" class="guesses-inline"></span>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div id="revealAnswer" class="reveal-box" aria-live="polite" hidden></div>
+          <div class="face-wrap">
+            <img id="moodFace" src="img/face-happy.png" alt="mood" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Press Enter to submit your guess.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
