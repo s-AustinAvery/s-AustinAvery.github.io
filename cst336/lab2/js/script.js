@@ -115,23 +115,23 @@ function checkGuess() {
 function setFace(state){
     switch(state){
         case "thinking":
-            moodFace.src = "img/face-thinking.gif";                
+            moodFace.src = "img/faceThinking.gif";                
             moodFace.classList.add("thinking");
             break;
         case "win":
-            moodFace.src = "img/face-cheer.png";
+            moodFace.src = "img/faceCheer.png";
             moodFace.classList.remove("thinking");
             break;
         case "lose":
-            moodFace.src = "img/face-sad.png";
+            moodFace.src = "img/faceSad.png";
             moodFace.classList.remove("thinking");
             break;
         case "happy":
-            moodFace.src = "img/face-happy.png";
+            moodFace.src = "img/faceHappy.png";
             moodFace.classList.remove("thinking");
             break;
         default:
-            moodFace.src = "img/face-happy.png";
+            moodFace.src = "img/faceHappy.png";
             moodFace.classList.remove("thinking");
             break;
     }
