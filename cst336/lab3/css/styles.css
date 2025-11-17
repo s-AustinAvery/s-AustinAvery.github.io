@@ -1,0 +1,182 @@
+:root {
+  --bg: #1e293b;
+  --card: #273549;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --muted-bg: #0a1020;
+  --border: #1f2a44;
+
+  --primary: #60a5fa;
+  --primary-contrast: #0b1223;
+  --accent: #a78bfa;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% 10%, #0b1223, var(--bg));
+  line-height: 1.45;
+}
+
+/* heading */
+h1 {
+  font-size: 1.8rem;
+  margin: 24px auto 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #fff;
+}
+
+/* form */
+#signupForm {
+  width: min(720px, 92vw);
+  margin: 12px auto 48px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 22px;
+}
+
+/* input, password, select fields */
+#signupForm input[type="text"],
+#signupForm input[type="password"],
+#signupForm select {
+  display: inline-block;
+  width: calc(100% - 256px); /* this leaves space for the alert */
+  padding: 10px 12px;
+  margin: 6px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  vertical-align: middle;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+/* focused */
+#signupForm input[type="text"]:focus,
+#signupForm input[type="password"]:focus,
+#signupForm select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.2);
+  background: #0e1830;
+}
+
+/* radio buttons */
+#signupForm input[type="radio"] {
+  transform: scale(1.05);
+  margin: 6px 6px 6px 0;
+  accent-color: var(--primary);
+}
+
+/* dropdown */
+#signupForm select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px),
+    calc(100% - 2.5em) 50%;
+  background-size: 6px 6px, 6px 6px, 1px 1.7em;
+  background-repeat: no-repeat;
+}
+
+/* labels */
+label {
+  display: inline-block;
+  margin: 6px 0 4px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* error and alert elements */
+span#suggestedPwd {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: .9rem;
+  color: var(--accent);
+  opacity: .95;
+}
+
+span#usernameError,
+span#passwordError,
+span#zipError {
+  display: inline-block;
+  min-height: 1.2em;
+  font-size: .95rem;
+  color: var(--error);
+  margin: 2px 0 10px 0;
+}
+
+/* alert icon */
+.alert-icon {
+  display: none;
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.alert-icon.visible {
+  display: inline-block;
+}
+
+/* submit button */
+#signupForm input[type="submit"] {
+  cursor: pointer;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--primary), #4d8fe0);
+  color: var(--primary-contrast);
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: transform .05s ease, filter .15s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 16px rgba(96,165,250,0.25);
+}
+
+#signupForm input[type="submit"]:hover {
+  filter: brightness(1.05);
+}
+
+#signupForm input[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 12px rgba(96,165,250,0.22);
+}
+
+/* muted link and helper text */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+.small {
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* success/warning utility */
+.success { color: var(--success); }
+.warning { color: var(--warning); }
+
+/* responsive adjustments */
+@media (max-width: 560px) {
+  #signupForm { padding: 18px 16px; }
+  h1 { font-size: 1.5rem; }
+}
