@@ -37,7 +37,8 @@ body {
 
 main {
     width: 100%;
-    max-width: 700px; /* keeps it nicely centered */
+    /* keep centered */
+    max-width: 700px;
 }
 
 /*  headers and layout  */

@@ -25,7 +25,7 @@ async function handleFormSubmit(event) {
 
     //validation
     if (nameToLookup === '') {
-        document.getElementById('formError').textContent = "Enter a Name.";
+        document.getElementById('formError').textContent = "Must enter a name";
         nameInput.focus();
         return;
     }
