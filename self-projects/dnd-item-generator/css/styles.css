@@ -1,0 +1,102 @@
+:root {
+    --bg-color: #2f2a24;          /* deep parchment brown */
+    --card-bg: #3c362f;           /* warm dark stone */
+    --accent-color: #c98a43;      /* softer bronze gold */
+    --text-color: #e4dbcc;        /* warm off-white */
+    --border-color: #5a5147;      /* muted stone border */
+    --shadow-color: rgba(0, 0, 0, 0.35);
+    --font-main: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    font-family: var(--font-main);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+header h1 {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   CARD STYLING
+   =============================== */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+}
+
+/* ===============================
+   FORM ELEMENTS
+   =============================== */
+label {
+    font-weight: 600;
+}
+
+select, input[type="checkbox"] {
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: #fbf6ee;
+}
+
+/* ===============================
+   BUTTON
+   =============================== */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #a9652f;
+}
+
+/* ===============================
+   OUTPUT AREA
+   =============================== */
+#resultText {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}

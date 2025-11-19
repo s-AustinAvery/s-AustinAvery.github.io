@@ -1,0 +1,145 @@
+:root {
+  --bg: #0b0f19;
+  --card: #131b2f;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --muted-bg: #0b0f19;
+  --border: #1e293b;
+
+  --primary: #38bdf8;
+  --primary-contrast: #020617;
+  --accent: #a78bfa;
+  --success: #22c55e;
+  --warning: #facc15;
+  --error: #ef4444;
+
+  --radius: 16px;
+  --shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* global reset and body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 700px; /* keeps it nicely centered */
+}
+
+/*  headers and layout  */
+h1 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+h2 {
+    color: var(--text);
+}
+
+p {
+    margin: 0.25rem 0;
+}
+
+/* form controls */
+form {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+input[type="text"] {
+    background: var(--muted-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    width: 250px;
+    margin-right: 0.5rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--primary);
+}
+
+button {
+    background: var(--primary);
+    color: var(--primary-contrast);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--accent);
+}
+
+.error {
+    color: var(--error);
+    margin-top: 0.5rem;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* cards */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    
+}
+
+.gender-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+}
+
+/* status text */
+#status {
+    color: var(--muted);
+    margin-left: 0.75rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
